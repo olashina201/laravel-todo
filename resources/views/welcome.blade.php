@@ -17,23 +17,23 @@
 </head>
 
 <body class="bg-gray-200 p-4">
-    <div class="lg:w-2/4 mx-auto py-8 px-6 bg-white round-xl">
+    <div class="lg:w-2/4 mx-auto py-8 px-6 bg-white rounded-xl">
 
         <h1 class="font-bold text-5xl text-center mb-8">Laravel + Tailwind</h1>
         <div class="mb-6">
             <form class="flex flex-col space-y-4" method="POST" action="/">
                 @csrf
                 <input type="text" name="title" placeholder="Title" class="py-3 px-4 bg-gray-100 rounded-xl" />
-                <textarea name="desc" placeholder="Description" class="py-3 px-4 bg-gray-100 rounded-xl"></textarea>
+                <textarea name="description" placeholder="Description" class="py-3 px-4 bg-gray-100 rounded-xl"></textarea>
                 <button class="w-28 py-4 px-8 bg-green-500 text-white rounded-xl">Add</button>
             </form>
         </div>
         <hr />
         <div class="mt-2 ">
-            @foreach ($todos as todo)
+            @foreach ($todos as $todo)
                 <div @class([
-                    'py-4 flex items-center border-gray-300 px-3',
-                    $todo->isComplete ? 'bg-green-200' : '',
+                    'py-4 flex items-center border-b border-gray-300 px-3',
+                    $todo->isComplete == 1 ? 'bg-green-200' : '',
                 ])>
                     <div class="flex-1 pr-8">
                         <h3 class="text-lg font-semibold">{{ $todo->title }}</h3>
