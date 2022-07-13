@@ -33,7 +33,7 @@
             @foreach ($todos as $todo)
                 <div @class([
                     'py-4 flex items-center border-b border-gray-300 px-3',
-                    $todo->isComplete == 1 ? 'bg-green-200' : '',
+                    $todo->isComplete ? 'bg-green-200 rounded-md' : '',
                 ])>
                     <div class="flex-1 pr-8">
                         <h3 class="text-lg font-semibold">{{ $todo->title }}</h3>
