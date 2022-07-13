@@ -25,5 +25,7 @@ class TodoController extends Controller
         ]);
 
         Todo::create($body);
+
+        return redirect('/');
     }
 }
